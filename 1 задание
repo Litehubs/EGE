@@ -1,1 +1,22 @@
+1)
+from itertools import *
+a = '24 146 45 12356 34 24'.split()
+s = 'CD DE DB CB BE BG BA AG'.split()
+print(*range(1,7))
 
+for p in permutations('ABCDEG'):
+    if all(str(p.index(x)+1) in a[p.index(y)] for x,y in s):
+        print(*p)
+        break
+
+2)
+from itertools import permutations
+
+a = '23 145 16 27 267 357 456'.split()
+s = 'CG GE EA AF FC DE DA DB BF'.split()
+
+print(* range(1,8))
+
+for p in permutations('ABCDEFG'):
+    if all(str(p.index(x)+1) in a[p.index(y)] for x,y in s):
+        print(*p)
