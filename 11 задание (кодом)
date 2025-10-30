@@ -1,0 +1,6 @@
+1) from math import *
+n = 9
+i = ceil(log2(n))
+e = ceil((15 * i )/8)
+a = e * 25
+print(a)   #обьем памяти для записи 25 паролей
