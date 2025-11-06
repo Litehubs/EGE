@@ -43,3 +43,25 @@ for dop in range(1,1000):
     if 101*user <= 101*1024:
         m+=[dop]
         print(max(m))
+
+
+5)from math import *
+kod = 10 + 52 + 9
+svd = ceil(log2(kod))
+lc = ceil(17 *svd /8)  #полных байт
+nomer = ceil(log2(1200))
+nomer = ceil(nomer/8)
+print(48 - lc - nomer)
+
+
+
+6) жесткий хард
+from math import *
+kod = 26 + 10
+svd = ceil(log2(kod))
+lc = ceil(14*svd/8)
+buc = ceil(log2(6))
+zif = ceil(log2(10))
+kp =5*buc + 3*zif
+kp =ceil(kp/8)
+print(30 - lc -kp)
