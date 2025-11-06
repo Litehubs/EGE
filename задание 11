@@ -13,3 +13,10 @@ for x in range(1,1000):
     num = ceil(x*char/8)
     if 1974*num<= 579*1024:
         print(x)
+
+3)from math import *
+for kod in range(1,1000):
+    char = ceil(log2(kod))
+    num = ceil(1231*char/8)
+    if 523872*num > 432*1024*1024:
+        print(kod)
