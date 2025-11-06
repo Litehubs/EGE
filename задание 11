@@ -31,3 +31,15 @@ for kod in range(1,1000):
     if 523872*num > 432*1024*1024:
         m+=[kod]
 print(min(m))
+
+4)
+from math import *
+for dop in range(1,1000):
+    m =[]
+    kod =  10 +8190
+    svd = ceil(log2(kod))
+    num = ceil(303*svd/8)
+    user = num + dop
+    if 101*user <= 101*1024:
+        m+=[dop]
+        print(max(m))
