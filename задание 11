@@ -4,3 +4,12 @@ i = ceil(log2(n))
 e = ceil((15 * i )/8)
 a = e * 25
 print(a)   #обьем памяти для записи 25 паролей
+
+
+2)from math import *
+for x in range(1,1000):
+    kod = 10 +51 + 1988
+    char =  ceil(log2(kod))
+    num = ceil(x*char/8)
+    if 1974*num<= 579*1024:
+        print(x)
