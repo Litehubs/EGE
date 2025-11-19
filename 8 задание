@@ -13,3 +13,10 @@ for i in product('ACDNY', repeat = 4):
     if ''.join(i) == 'ANDY':
         print(cnt, i)
     cnt +=1
+
+3)from itertools import *
+cnt = 0
+for i in product('XIAO', repeat = 8):
+    if i.count('I') == 3:
+        cnt +=1
+print(cnt)
