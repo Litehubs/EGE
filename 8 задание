@@ -1,0 +1,15 @@
+1) #Нужно найти слово по номеру
+from itertools import *
+cnt = 1
+for i in product('AEY', repeat = 5):
+    if cnt == 50:
+        print(cnt, i)
+    cnt +=1
+
+2) #найти цифру по слову в алфавите
+from itertools import *
+cnt = 1
+for i in product('ACDNY', repeat = 4):
+    if ''.join(i) == 'ANDY':
+        print(cnt, i)
+    cnt +=1
