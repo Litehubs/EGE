@@ -53,3 +53,11 @@ for numb, i in enumerate(product('РСТУХ', repeat = 5),1):
     word = ''.join(i)
     if 'Х' not in word and word.count('У') ==2:
         print(numb,word)
+
+8)from itertools import *
+cnt = 0
+for numb, i in enumerate(set(permutations('КАРЕТА', r = 4)), 1):
+    word = ''.join(i)
+    if 'АА' not in word:
+        cnt +=1
+    print(cnt,word)
