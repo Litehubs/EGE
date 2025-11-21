@@ -45,3 +45,9 @@ for numb, i in enumerate(product('АВГДИРЯ', repeat = 6),1):
     if numb % 2 ==0 and word[0] != 'Д' and word.count('Р') >=2:
         cnt+=1
 print(cnt)
+
+7) from itertools import *
+for numb, i in enumerate(product('РСТУХ', repeat = 5),1):
+    word = ''.join(i)
+    if 'Х' not in word and word.count('У') ==2:
+        print(numb,word)
