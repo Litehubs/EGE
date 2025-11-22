@@ -86,3 +86,15 @@ for i in permutations('0123456789', r = 6):
          if '**' not in chislo and '##' not in chislo:
             cnt +=1
 print(cnt)
+
+11)Определите кол-во шестизначных числел записанных в семиричной системе счисления, в записи
+которых ровно две цифры 5, и при этом никакая четная цифра не стоит рядом с цифрой 5.
+from itertools import *
+cnt = 0
+for i in product('0123456',repeat=6):
+    chislo = ''.join(i)
+    if chislo[0] != '0' and chislo.count('5') ==2 and \
+            all(d + '5' not in chislo and '5' + d not in chislo for d in '0246'):
+        cnt+=1
+print(cnt)
+
