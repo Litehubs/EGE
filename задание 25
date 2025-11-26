@@ -1,4 +1,4 @@
-
+Делители:
 1) оптимизация корнем
 for x in range(23456,123456 + 1):
     delitel = []
@@ -8,3 +8,12 @@ for x in range(23456,123456 + 1):
                 delitel.append(d)
     if len(delitel) == 3:
         print(x, max(delitel))
+2)cnt = 0
+for n in range(800001,800001 + 1000):
+    for d in range(17,n,10):
+        if n % d == 0:
+            print(n,d)
+            cnt+=1
+            break
+    if cnt ==5:
+        break
