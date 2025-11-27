@@ -17,3 +17,16 @@ for n in range(800001,800001 + 1000):
             break
     if cnt ==5:
         break
+3)cnt = 0
+for n in range(6651221,6651221 + 1000):
+    deliteli = []
+    for d in range(2,(int(n ** 0.5))+1):
+         if n % d == 0:
+             deliteli.append(d)
+             deliteli.append(n // d)
+    if len(deliteli) == 2 and  str(deliteli[0]).count('2') ==1 \
+        and str(deliteli[1]).count('2') ==1:
+        print(n, max(deliteli))
+        cnt+=1
+    if cnt ==5:
+        break
