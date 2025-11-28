@@ -17,7 +17,23 @@ for n in range(800001,800001 + 1000):
             break
     if cnt ==5:
         break
-3)cnt = 0
+
+
+3) cnt = 0
+M = 0
+for n in range(900001,900001 + 1000):
+    delit = []
+    for d in range(2, n):
+        if n % d:
+            M = d + n // d
+            break
+    if M % 10 ==2:
+        cnt+=1
+        print(n,M)
+    if cnt ==5:
+        break
+
+4)cnt = 0
 for n in range(6651221,6651221 + 1000):
     deliteli = []
     for d in range(2,(int(n ** 0.5))+1):
