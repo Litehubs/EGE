@@ -3,7 +3,7 @@
 for x in range(23456,123456 + 1):
     delitel = []
     if x**(1/2) % 1 == 0:
-        for d in range(2,x):
+        for d in range(2,x):               #нетривиальный делитель начинается от 2 и до самого числа не включительно
             if x % d ==0:
                 delitel.append(d)
     if len(delitel) == 3:
