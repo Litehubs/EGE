@@ -66,21 +66,3 @@ for n in range(5800001,5800001 + 1000):
         M = max(delit) + min(delit)
         if M > 80000 and str(M) == str(M)[::-1]:
             print(n,M)
-def f(n):
-    for d in range(2, int(n **0.5) +1):
-        if n % d ==0:
-            return False
-    return True
-
-for n in range(5800001,5800001 + 1000):
-    delit = []
-    for d in range(2, int(n **0.5) +1):
-        if n % d ==0:
-            if f(d):
-                delit.append(d)
-            if f(n // d):
-                delit.append(n //d)
-    if delit:
-        M = max(delit) + min(delit)
-        if M > 80000 and str(M) == str(M)[::-1]:
-            print(n,M)
