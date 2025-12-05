@@ -82,4 +82,31 @@ p_y = sum([y for y, y in best_centroids]) / k
 print(int(p_x * 10000), int(p_y * 10000))
 
 файлик Б
+ from math import *
+f = open('27_B_2.txt')
+f.readline()
+k = 3
+points = [list(map(float, s.replace(',', '.').split())) for s in f]
+clusters = [[] for _ in range(k)]
+for x,y in points:
+    if x > 21:
+        clusters[0].append([x,y])
+    elif x > 10:
+        clusters[1].append([x,y])
+    else:
+        clusters[2].append([x, y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10*10
+    for c1 in clusters[i]:
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist += dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = c1
+print(best_centroids)
+p_x = sum([x for x, y in best_centroids]) / k
+p_y = sum([y for x, y in best_centroids]) / k
+print(int(p_x * 10000), int(p_y * 10000)) #вывел с ошибкой
 
