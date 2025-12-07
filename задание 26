@@ -1,0 +1,12 @@
+1)из ТЕОРИИ
+from math import *
+f = open('26.1.txt')
+n = int(f.readline())
+a = [int(s) for s in f]                     #Введем все данные
+a120 = [x for x in a if x > 120]
+a120.sort()                                 # по возрастанию
+sale = sum(a120[:len(a120)//2])*0.25
+print(ceil(sum(a) - sale), max(a120[:len(a120)//2]))
+ОТВЕТ: 472707 563
+
+2)
