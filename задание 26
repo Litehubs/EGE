@@ -9,4 +9,13 @@ sale = sum(a120[:len(a120)//2])*0.25
 print(ceil(sum(a) - sale), max(a120[:len(a120)//2]))
 ОТВЕТ: 472707 563
 
-2)
+2)from math import *
+f = open('26.2.txt')
+n = int(f.readline())
+a = [int(s) for s in f]
+a.sort(reverse=True)             #по убыванию
+sale1 = sum(a[:2500])*0.5
+a.sort()                         #по возрастанию
+sale2 = sum(a[:2500])*0.5
+print(sum(a)- sale1, sum(a)- sale2)
+ОТВЕТ : 3930667 4868067
