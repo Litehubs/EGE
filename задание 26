@@ -1,4 +1,5 @@
-1)из ТЕОРИИ
+#ТИП СКИДКИ
+1)
 from math import *
 f = open('26.1.txt')
 n = int(f.readline())
@@ -45,3 +46,23 @@ for box in boxes[1:]:
     if gift[-1] - box >=5:      #условие для добавления коробки
         gift.append(box)
 print(len(gift), min(gift))
+
+2)f = open('26.3.txt')
+n = int(f.readline())
+boxes = []
+for s in f:
+    lens, color = s.split()
+    boxes.append([int(lens),color])
+boxes.sort(reverse=True)
+bkocks = []
+while boxes != []:
+    gift = [boxes[0]]
+    del boxes[0]
+    for box in boxes[:]:
+        if gift[-1][0] - box[0] >= 8 and gift[-1][1] != box[1]:
+            gift.append(box)
+            boxes.remove(box)
+    bkocks.append(gift)
+print(len(bkocks), len(bkocks[0]))
+
+3)
