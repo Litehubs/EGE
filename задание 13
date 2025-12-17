@@ -82,3 +82,17 @@ for ip_add in ip_net.hosts():
     if f"{ip_add:b}".count("1") % 4 != 0:
         k += 1
 print(k)
+
+
+Аналогия 15 задания:
+1)
+from ipaddress import *
+for n in range(9):
+    A = int('1' * n + '0' * (8 - n), 2)       # А - допустимое для маски число 
+    net = ip_network(f'255.224.33.160/255.255.{A}.0',0)
+    for ip in net:
+        if (f'{ip:b}'[:16].count('1') >= f'{ip:b}'[16:].count('1')) ==False:
+            break
+    else:
+        print(A)
+
