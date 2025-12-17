@@ -96,3 +96,11 @@ for n in range(9):
     else:
         print(A)
 
+2)from ipaddress import *
+for A in range(256):                           # А - допустимое для адреса сети
+    net = ip_network(f'127.254.{A}.19/255.255.224.0', 0)
+    for ip in net:
+        if (f'{ip:b}'[:16].count("1") >=  f'{ip:b}'[16:].count('1')) ==False:
+            break
+    else:
+        print(A)
