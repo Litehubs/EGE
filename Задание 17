@@ -8,3 +8,13 @@ for i in range(len(a)):
     if a[i] % 11 ==0 and  a[i +1] % 11 ==0:
         sum_par.append(a[i] + a[i+1])
 print(len(sum_par),min(sum_par))
+
+2)f = open('17.2.txt')
+a = []
+for s in f:
+    a.append(int(s))
+sum_par = []
+for i in range(len(a) - 1):
+    if a[i] > 1234 or a[i +1] > 1234:
+        sum_par.append(a[i]**2 + a[i + 1]**2)
+print(len(sum_par), max(sum_par))
