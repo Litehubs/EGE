@@ -69,3 +69,14 @@ for i in range(len(a) - 1):
     if (a[i] + a[i + 1]) == max(a):
         sum_par.append(a[i]**2 + a[i+ 1]**2)
 print(len(sum_par),max(sum_par))
+
+
+ДЗ:
+1)
+f = open('Задание 1.txt')
+a = [int(s) for s in f]
+par_sum = []
+for i in range(len(a) - 1):
+    if a[i] % 8 ==0 and a[i+1] % 8 ==0:
+        par_sum.append(abs(a[i] - a[i + 1]))
+print(len(par_sum), min(par_sum))
