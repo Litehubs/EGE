@@ -89,3 +89,14 @@ for i in range(len(a) - 1):
     if (abs(a[i]) + abs(a[i + 1])) > 650:
         par_s.append(max(a[i], a[i + 1]))
 print(len(par_s), max(par_s))
+
+
+КЕГЭ:
+1)
+f = open('17_2015.txt')
+a = [int(s) for s in f]
+sum_par = []
+for i in range(len(a)):
+    if (a[i] % 10 ==5 or a[i] % 10 ==7) and a[i] % 9 != 0 and a[i] % 11 != 0 :
+        sum_par.append(a[i])
+print(len(sum_par), max(sum_par) + min(sum_par))
