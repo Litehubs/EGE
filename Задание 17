@@ -111,3 +111,13 @@ for i in range(len(a) - 2):
         sum_trud.append(a[i]  +  a[i +1] + a[i + 2])
 print(len(sum_trud), min(sum_trud))
 
+2) f = open('17_2.txt')
+a = [int(s) for s in f]
+ffg = [x for x in a if x % 2 ==0]
+chet = sum(ffg) / len(ffg)
+sum_par = []
+for i in range(len(a) - 1):
+    if ((a[i] % 9 == 0) + (a[i + 1] % 9 == 0)) ==1  \
+            and (a[i] < chet or a[i + 1] < chet):
+        sum_par.append(a[i]  +  a[i +1])
+print(len(sum_par), max(sum_par))
