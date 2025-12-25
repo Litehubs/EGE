@@ -100,3 +100,14 @@ for i in range(len(a)):
     if (a[i] % 10 ==5 or a[i] % 10 ==7) and a[i] % 9 != 0 and a[i] % 11 != 0 :
         sum_par.append(a[i])
 print(len(sum_par), max(sum_par) + min(sum_par))
+
+
+ПРАКТИКА: 
+1) f = open('17_1.txt')
+a = [int(s) for s in f]
+sum_trud = []
+for i in range(len(a) - 2):
+    if a[i] > 0 or a[i +1] > 0 or a[i + 2] > 0:
+        sum_trud.append(a[i]  +  a[i +1] + a[i + 2])
+print(len(sum_trud), min(sum_trud))
+
