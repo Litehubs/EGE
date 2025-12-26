@@ -150,3 +150,12 @@ for i in range(len(a) -1):
     if ((a[i] % 123 == mina) or (a[i + 1] % 123 == mina)):
         sum_par.append(a[i] + a[i + 1])
 print(len(sum_par), max(sum_par))
+
+4)f = open('Задание 10.txt')
+a = [int(s) for s in f]
+dva_cc = min([x for x in a if len(str(abs(x))) == 2])
+sum_par = []
+for i in range(len(a) -1):
+    if len(str(a[i])) ==2 and len(str(a[i +1])) ==2  and sum(a[i:i+2]) % dva_cc == 0:
+        sum_par.append(a[i] + a[i+1])
+print(len(sum_par), max(sum_par))
