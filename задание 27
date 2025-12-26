@@ -170,5 +170,30 @@ print(int(P_x * 10000),int(P_y * 10000))         #выводим целую ча
 
 ОТВЕТ:1679907304312262729105
 
-4)
+4)новое РАСТОЯНИЕ МАНХЕТОВСКОЕ
+from math import *
+f = open('27A 2.txt')
+f.readline()
+points = [list(map(float, s.replace(',', '.').split()))  for s in f]
+k = 2
+clusters = [[] for _ in range(k)]
+for x, y in points:
+    if x > 0:
+        clusters[0].append([x,y])
+    else:
+        clusters[1].append([x,y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10**10
+    for cx, cy in clusters[i]:
+        sum_dist = 0
+        for px, py in clusters[i]:
+            sum_dist+= abs(cx - px) + abs(cy - py)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = [cx,cy]
+print(best_centroids)
+P_x = sum([x for x,y in best_centroids]) /k
+P_y = sum([y for x,y in best_centroids]) /k
+print(int(P_x * 10000), int(P_y * 10000))
 
