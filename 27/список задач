@@ -1,1 +1,233 @@
+#Aбсолютное значение целой части: print(Px //1, Py//1)
+
+
+
+1) файлик A
+from math import *
+f = open('27A_1.txt')
+f.readline()
+points = [list(map(float, s.replace(',', '.').split())) for s in f]
+clusters = [[],[]]
+for x, y in points:
+    if y > 2:
+        clusters[0].append([x,y])
+    else:
+        clusters[1].append([x, y])
+best_centroids = [[],[]]
+for i in range(len(clusters)):
+    min_sum_dist = 10**10
+    for c1 in clusters[i]:
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist+= dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] =c1
+print(best_centroids)
+p_x = sum([x for x,y in best_centroids]) / len(clusters)
+p_y = sum([y for x,y in best_centroids]) / len(clusters)
+print(int(p_x*10000),int(p_y*10000))
+
+файлик B
+from math import *
+f = open('27B_1.txt ')
+f.readline()
+points = [list(map(float, s.replace(',', '.').split())) for s in f]
+clusters = [[],[],[]]
+for x, y in points:
+    if y < 0:
+        clusters[0].append([x,y])
+    elif x < 2:
+        clusters[1].append([x,y])
+    else:
+        clusters[2].append([x,y])
+
+
+best_centroids = [[],[],[]]
+for i in range(len(clusters)):
+    min_sum_dist = 10**10
+    for c1 in clusters[i]:
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist+= dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] =c1
+print(best_centroids)
+p_x = sum([x for x,y in best_centroids]) / len(clusters)
+p_y = sum([y for x,y in best_centroids]) / len(clusters)
+print(int(p_x*10000),int(p_y*10000))
+
+2)файлик А
+from math import *
+f = open('27_A_2.txt')
+f.readline()
+k = 2
+points = [list(map(float, s.replace(',', '.').split())) for s in f]
+clusters = [[] for _ in range(k)]
+for x,y in points:
+    if y > 2:
+        clusters[0].append([x,y])
+    else:
+        clusters[1].append([x,y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10*10
+    for c1 in clusters[i]:
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist += dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = c1
+print(best_centroids)
+p_x = sum([x for x, y in best_centroids]) / k
+p_y = sum([y for y, y in best_centroids]) / k
+print(int(p_x * 10000), int(p_y * 10000))
+
+файлик Б
+ from math import *
+f = open('27_B_2.txt')
+f.readline()
+k = 3
+points = [list(map(float, s.replace(',', '.').split())) for s in f]
+clusters = [[] for _ in range(k)]
+for x,y in points:
+    if x > 21:
+        clusters[0].append([x,y])
+    elif x > 10:
+        clusters[1].append([x,y])
+    else:
+        clusters[2].append([x, y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10*10
+    for c1 in clusters[i]:
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist += dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = c1
+print(best_centroids)
+p_x = sum([x for x, y in best_centroids]) / k
+p_y = sum([y for x, y in best_centroids]) / k
+print(int(p_x * 10000), int(p_y * 10000)) #вывел с ошибкой
+
+
+Домашнее задание по теме кластеров с использованием графического метода.
+3) файлик А
+from math import *
+f = open('27_A_1.txt')
+f.readline()
+k = 2
+points = [list(map(float, s.replace(',','.').split())) for s in f]            #Список точек
+clusters = [ [] for _ in range(k)]         #добавляем пустые списки
+for x, y in points:                        #проходимся по всем точкам
+    if y > 10:
+        clusters[0].append([x,y])
+    else:
+        clusters[1].append([x,y])
+best_centroids = [ [] for _ in range(k)]             #создаем переменную
+for i in range(k):
+    min_sum_dist = 10**10
+    for c1 in clusters[i]:                       #перебираем все возможные центроиды
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist += dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = c1                 #от этой точки (c1) суммарное расстояние всех остальных минимально
+print(best_centroids)                              #выводим для проверки точек на центроиды в либре/икселе
+P_x = sum([x for x,y in best_centroids]) / k
+P_y = sum([y for x,y in best_centroids]) / k
+print(int(P_x * 10000),int(P_y * 10000))         #выводим целую часть и умножаем на 10000 по условии задачи
+
+ФАЙЛИК B
+from math import *
+f = open('27_B_1.txt')
+f.readline()
+k = 3
+points = [list(map(float, s.replace(',','.').split())) for s in f]            #Список точек
+clusters = [ [] for _ in range(k)]         #добавляем пустые списки
+for x,y in points:
+    if x > 22:
+        clusters[0].append([x,y])
+    elif x < 5:
+        clusters[1].append([x,y])
+    else:
+        clusters[2].append([x,y])
+best_centroids = [ [] for _ in range(k)]             #создаем переменную
+for i in range(k):
+    min_sum_dist = 10**10
+    for c1 in clusters[i]:                       #перебираем все возможные центроиды
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist += dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = c1                 #от этой точки (c1) суммарное расстояние всех остальных минимально
+print(best_centroids)                              #выводим для проверки точек на центроиды в либре/икселе
+P_x = sum([x for x,y in best_centroids]) / k
+P_y = sum([y for x,y in best_centroids]) / k
+print(int(P_x * 10000),int(P_y * 10000))         #выводим целую часть и умножаем на 10000 по условии задачи
+
+ОТВЕТ:1679907304312262729105
+
+4)
+новое РАСТОЯНИЕ МАНХЕТОВСКОЕ
+файл А:
+from math import *
+f = open('27A 2.txt')
+f.readline()
+points = [list(map(float, s.replace(',', '.').split()))  for s in f]
+k = 2
+clusters = [[] for _ in range(k)]
+for x, y in points:
+    if x > 0:
+        clusters[0].append([x,y])
+    else:
+        clusters[1].append([x,y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10**10
+    for cx, cy in clusters[i]:
+        sum_dist = 0
+        for px, py in clusters[i]:
+            sum_dist+= abs(cx - px) + abs(cy - py)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = [cx,cy]
+print(best_centroids)
+P_x = sum([x for x,y in best_centroids]) /k
+P_y = sum([y for x,y in best_centroids]) /k
+print(int(P_x * 10000), int(P_y * 10000))
+файл 2:
+from math import *
+f = open('27B 2.txt')
+f.readline()
+points = [list(map(float, s.replace(',', '.').split()))  for s in f]
+k = 3
+clusters = [[] for _ in range(k)]
+for x, y in points:
+    if x > 0:
+        clusters[0].append([x,y])
+    elif y > 0:
+        clusters[1].append([x,y])
+    else:
+        clusters[2].append([x,y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10**10
+    for cx, cy in clusters[i]:
+        sum_dist = 0
+        for px, py in clusters[i]:
+            sum_dist+= abs(cx - px) + abs(cy - py)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = [cx,cy]
+print(best_centroids)
+P_x = sum([x for x,y in best_centroids]) /k
+P_y = sum([y for x,y in best_centroids]) /k
+print(abs(P_x * 10000), abs(P_y * 10000))
 
