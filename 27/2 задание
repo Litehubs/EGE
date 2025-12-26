@@ -1,0 +1,31 @@
+from math import *
+f = open('27_B.txt')
+f.readline()
+points = [list(map(float, s.replace(',','.').split())) for s in f]
+k = 3
+clusters = [[] for _ in range(k)]
+for x,y in points[:]:
+    if x < 0 or x > 25:
+        points.remove([x,y])
+    elif y < 15:
+        clusters[0].append([x,y])
+    elif y < 21:
+        clusters[1].append([x,y])
+    elif y > 21:
+        clusters[2].append([x, y])
+best_centroids = [[] for _ in range(k)]
+for i in range(k):
+    min_sum_dist = 10**10
+    for c1 in clusters[i]:
+        sum_dist = 0
+        for p1 in clusters[i]:
+            sum_dist += dist(c1,p1)
+        if sum_dist < min_sum_dist:
+            min_sum_dist = sum_dist
+            best_centroids[i] = c1
+print(best_centroids)
+print([len(cluster) for cluster in clusters])
+Q1 = best_centroids[0][0] - best_centroids[2][0]
+Q2 = best_centroids[0][1] - best_centroids[2][1]
+print(abs(Q1 * 10000), abs(Q2 * 10000) )
+#867 161306
