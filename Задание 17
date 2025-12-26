@@ -133,3 +133,11 @@ for i in range(len(a) - 2):
         and (a[i] + a[i +1] + a[i +2]) <= mx:
         sum_try.append(a[i] + a[i + 1] + a[i + 2])
 print(len(sum_try), max(sum_try))
+2)
+f = open('Задание 8.txt')
+a = [int(s) for s in f]
+sum_par = []
+for i in range(len(a) -1):
+    if (((a[i] % 10 == 6) + (a[i +1] % 10 == 6))==1) and (a[i]**2 + a[i+1]**2) < max(a)**2:
+        sum_par.append(a[i]**2 + a[i+1]**2)
+print(len(sum_par), max(sum_par))
