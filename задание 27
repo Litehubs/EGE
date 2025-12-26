@@ -1,3 +1,7 @@
+#Aбсолютное значение целой части: print(Px //1, Py//1)
+
+
+
 1) файлик A
 from math import *
 f = open('27A_1.txt')
@@ -170,7 +174,9 @@ print(int(P_x * 10000),int(P_y * 10000))         #выводим целую ча
 
 ОТВЕТ:1679907304312262729105
 
-4)новое РАСТОЯНИЕ МАНХЕТОВСКОЕ
+4)
+новое РАСТОЯНИЕ МАНХЕТОВСКОЕ
+файл А:
 from math import *
 f = open('27A 2.txt')
 f.readline()
@@ -196,4 +202,5 @@ print(best_centroids)
 P_x = sum([x for x,y in best_centroids]) /k
 P_y = sum([y for x,y in best_centroids]) /k
 print(int(P_x * 10000), int(P_y * 10000))
+файл 2:
 
