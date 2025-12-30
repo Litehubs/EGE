@@ -1,0 +1,10 @@
+s = 654**25 + 927**13 + 243**5 - 44**2 + 2025
+alf = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+def f(s):
+    a = ''
+    while s > 0:
+        a += alf[(s % 25)]
+        s //=25
+    return a[::-1]
+print(f(s))
+#26 букв
