@@ -1,0 +1,9 @@
+for x in range(0,2071):
+    s = 7**230 + 7**130 + 7**30 - x
+    cnt = 0
+    while s > 0:
+        if s % 7 ==0:
+            cnt +=1
+        s //= 7
+    if cnt == 199:
+        print(x)
