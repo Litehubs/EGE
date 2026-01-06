@@ -1,0 +1,15 @@
+f = open('Задание 1.txt')
+s = f.readline()
+s = s.replace('-','*')
+a = s.split('*')
+arifm = ''
+max_arifm = ''
+for x in a:
+    if len(x)  != 0 and x[0] != '0':
+        arifm += x + "*"
+    elif len(x) != 0 and x[0] == '0' and int(x) != 0:
+        arifm = str(int(x)) + '*'
+    else:
+        arifm = ""
+    max_arifm = max(arifm,max_arifm, key=len)
+print(len(max_arifm) - 1 )
