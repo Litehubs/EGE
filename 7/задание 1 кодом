@@ -1,0 +1,7 @@
+from math import *
+gg = []
+for i in range(0,10000):
+    v = 1050 * 460 * 64 * i
+    if (v / 1474560) <= 200:
+        gg.append(2**i)
+print(max(gg))
