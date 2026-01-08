@@ -1,3 +1,4 @@
+1)
 from math import *
 for dlin in range(1,10000):
     i = ceil(log2(10 + 52 + 458))
@@ -5,4 +6,14 @@ for dlin in range(1,10000):
     if (nomer * 862) <= (276 * 2**10):
         print(dlin)
 
-#прототип с серийным номером
+
+2)
+from math import *
+for i in range(1,100000):
+    nomer = ceil(261 * i / 8)
+    if (nomer * 252500) > (31 * 2**20):
+        print(2**i - 7)                    #минимальную мощность ищем
+        break
+
+
+#прототипы с серийным номером
