@@ -1,1 +1,5 @@
-
+from math import *
+i = ceil(log2(10+4090))
+N = ceil(315 * i/8)
+otv = (N / 2**10) * 262144
+print(otv)
