@@ -1,1 +1,10 @@
+Базовый код Вики:
 
+  def g(x,s,p,end):
+      if (x + s) >= 73: return p in end
+      if (x + s) < 73 and p == max(end): return False
+      moves = [g(x,s+ 2,p + 1, end),g(x,s + 2,p + 1, end),
+               g(x,s * 2,p + 1, end), g(x,s *  2,p + 1, end)]
+      return any(moves) if (p + 1) % 2 == (end[0] % 2 ) else all(moves)
+  x = 4
+  print([s for s in range(1,69) if g(x, s,0,[1])])
