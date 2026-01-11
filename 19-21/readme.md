@@ -1,5 +1,6 @@
 Базовый код Вики:
 
+
   def g(x,s,p,end):
       if (x + s) >= 73: return p in end
       if (x + s) < 73 and p == max(end): return False
