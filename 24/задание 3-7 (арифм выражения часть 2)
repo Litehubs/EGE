@@ -1,0 +1,14 @@
+1)from  string import *
+f = open('Задание 1.txt')
+s = f.readline()
+buff = ''
+alph = '0123456789ABCDEFG'
+numbers = []
+for i in range(len(s) - 1):
+    if s[i] in alph and s[i + 1] in alph:
+        buff += s[i + 1]
+    else:
+        buff = s[i + 1]
+    numbers.append(buff)
+print(len(max(numbers, key=len)))
+#11
