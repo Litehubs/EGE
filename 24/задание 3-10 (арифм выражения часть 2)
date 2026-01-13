@@ -11,4 +11,15 @@ for i in range(len(s) - 1):
         buff = s[i + 1]
     numbers.append(buff)
 print(len(max(numbers, key=len)))
-#11
+
+
+6)f = open('Задание 1.txt')
+res = []
+for i, s in enumerate(f, 1):
+    try:
+        res.append([eval(s), i])
+    except:
+        pass
+print(max(res))
+#[90.66044890873015, 1228]
+#1228
