@@ -13,11 +13,26 @@ for i in range(len(s) - 1):
 print(len(max(numbers, key=len)))
 
 
-6)f = open('Задание 1.txt')
+6)f = open('Задание 1.txt')                            
 res = []
 for i, s in enumerate(f, 1):
     try:
         res.append([eval(s), i])
+    except:
+        pass
+print(max(res))
+#[90.66044890873015, 1228]
+#1228
+
+второй вариант:
+
+f = open('Задание 1.txt')
+res = []
+numb = 1
+for s in f:
+    try:
+        res.append([eval(s), numb])
+        numb += 1
     except:
         pass
 print(max(res))
