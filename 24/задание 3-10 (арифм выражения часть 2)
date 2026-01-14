@@ -38,3 +38,16 @@ for s in f:
 print(max(res))
 #[90.66044890873015, 1228]
 #1228
+
+7)f = open('Задание 2.txt')
+s = f.readline()
+typ = []
+for s in f:
+    try:
+        s = s.strip()
+        if all(x in '0123456789+*' for x in s):
+            typ.append([eval(s), s])
+    except:
+        pass
+print(max(typ))
+#[36436400, '77*65*80*91']
