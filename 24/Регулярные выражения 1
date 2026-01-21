@@ -1,0 +1,6 @@
+1)import re
+f = open('Задание 1.txt')
+s = f.readline()
+chisl = re.findall(r'(?:XYZ)+(?:XY?)?',s)
+print(len(max(chisl, key=len)))
+#13
