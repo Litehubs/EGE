@@ -4,3 +4,9 @@ s = f.readline()
 chisl = re.findall(r'(?:XYZ)+(?:XY?)?',s)
 print(len(max(chisl, key=len)))
 #13
+
+2)import re
+f = open('Задание 2.txt')
+s = f.readline()
+chisla = re.findall(r'\d+(?:[-+*]\d+)*',s)
+print(len(max(chisla, key=len)))
