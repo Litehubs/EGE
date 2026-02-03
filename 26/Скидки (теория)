@@ -7,3 +7,13 @@ a120.sort()                            #сортируем по возраста
 sale = sum(a120[:len(a120)//2]) * 0.25        #считаем скидку
 print(len(a120),len(a120[:len(a120)//2]))             #вывод для проверки данных (необязательный шаг)
 print(sum(a) - sale, max(a120[:len(a120)//2]))   #Выводим общая сумма -  скидка ; максимальная стоимость товаров со скидкой
+
+2)
+f = open('26.2.txt')
+n = int(f.readline())
+a = [int(s) for s in f]
+a.sort(reverse=True)
+sale1 = sum(a[:2500])*0.5
+a.sort()
+sale2 = sum(a[:2500])*0.5
+print(sum(a) - sale1, sum(a) - sale2) 
