@@ -10,4 +10,4 @@
 
 
 
-если нужны ганицы то (r'\b .... \b, s, flags=re.IGNORECASE)
+если нужны границы то (r'\b .... \b, s, flags=re.IGNORECASE)
